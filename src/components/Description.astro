@@ -1,0 +1,74 @@
+---
+import NextLabIcon from '../images/nextlab.png'
+import RezidentIcon from '../images/rezdent.png'
+
+const Skills: Array<string> = [
+	'Front-End',
+	'Back-End',
+	'UI & UX Design',
+	'Interpersonal',
+	'Testing and debugging',
+	'SEO'
+]
+---
+
+<section
+	class='grid gap-6 sm:grid-cols-2 md:mt-6 md:grid-cols-1 lg:mt-0 lg:grid-cols-2'
+>
+	<article id='about' class='bg-neutral-100 p-2'>
+		<span class='font-bold'>About me</span>
+		<p class='mb-2 text-sm text-neutral-600'>
+			I am a up-and-coming web developer with a passion for creating visually
+			stunning and user-friendly websites.
+		</p>
+		<div class='font-bold'>Location</div>
+		<span class='text-sm text-neutral-600'>🇷🇴 Bucharest, Romania</span>
+	</article>
+	<aside class='bg-neutral-100 p-2'>
+		<span class='font-bold'>Skills</span>
+		<ul class='flex flex-wrap gap-1 p-1'>
+			{
+				Skills.map((item) => (
+					<li class='w-max rounded-full border-2 py-1 px-2 text-sm'>{item}</li>
+				))
+			}
+		</ul>
+	</aside>
+	<article
+		id='experience'
+		class='space-y-4 p-2 sm:col-span-2 md:col-span-1 lg:col-span-2'
+	>
+		<span class='font-bold'>Experience</span>
+		<ul class='flex flex-col gap-4'>
+			<li class='flex gap-4'>
+				<img src={NextLabIcon} alt='NextLab Icon' width='50' class='h-full' />
+				<div>
+					<div class='text-lg'>Python Trainee</div>
+					<div class='text-neutral-700'>
+						<a
+							href='https://nextlab.tech/'
+							target='_blank'
+							class='border-neutral-500 hover:border-b'>NextLab</a
+						> &#183; Part-time
+					</div>
+					<div class='text-sm text-neutral-500'>Oct 2022 - Present</div>
+				</div>
+			</li>
+			<hr />
+			<li class='flex gap-4'>
+				<img src={RezidentIcon} alt='Rezident Icon' width='50' class='h-full' />
+				<div>
+					<div class='text-lg'>Internship</div>
+					<div class='text-neutral-700'>
+						<a
+							href='https://rezident.ro/'
+							target='_blank'
+							class='border-neutral-500 hover:border-b'>Rezident</a
+						> &#183; Part-time
+					</div>
+					<div class='text-sm text-neutral-500'>Jul 2022 - Jul 2022</div>
+				</div>
+			</li>
+		</ul>
+	</article>
+</section>

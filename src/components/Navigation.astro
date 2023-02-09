@@ -1,19 +1,15 @@
 ---
-const navLinks = [
-	{ navName: 'about' },
-	{ navName: 'experience' },
-	{ navName: 'projects' }
-]
+const navLinks: Array<string> = ['profile', 'about', 'experience', 'projects']
 ---
 
 <nav class='fixed top-0 hidden h-screen w-64 flex-col border-r pt-4 md:flex'>
 	{
 		navLinks.map((item) => (
 			<a
-				href={`#${item.navName}`}
+				href={`#${item}`}
 				class='group mx-4 flex justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200'
 			>
-				<span>{item.navName}</span>
+				<span>{item}</span>
 				<span class='hidden text-blue-500 group-hover:block'>&rarr;</span>
 			</a>
 		))
