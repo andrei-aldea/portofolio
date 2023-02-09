@@ -1,0 +1,103 @@
+---
+export interface Props {
+	title: string
+	link: string
+	typescript?: boolean
+	react?: boolean
+	nextjs?: boolean
+	astro?: boolean
+}
+
+export interface Technologies {
+	name: string
+	color: string
+	exists: boolean
+}
+
+const {
+	title,
+	link,
+	typescript = false,
+	react = false,
+	nextjs = false,
+	astro = false
+} = Astro.props
+
+const technologies: Array<Technologies> = [
+	{
+		name: 'html',
+		color: 'e34c26',
+		exists: true
+	},
+	{
+		name: 'css',
+		color: '264de4',
+		exists: true
+	},
+	{
+		name: 'javascript',
+		color: 'fcdc00',
+		exists: true
+	},
+	{
+		name: 'tailwindcss',
+		color: '38bdf8',
+		exists: true
+	},
+	{
+		name: 'typescript',
+		color: '3178c6',
+		exists: typescript
+	},
+	{
+		name: 'react',
+		color: '61dafb',
+		exists: react
+	},
+	{
+		name: 'nextjs',
+		color: 'fff',
+		exists: nextjs
+	},
+	{
+		name: 'astro',
+		color: 'ff5d01',
+		exists: astro
+	}
+]
+---
+
+<li class='rounded-md border'>
+	<div class='border-b p-2'>
+		<span>{title}</span>
+		<details>
+			<summary class='cursor-pointer text-sm text-neutral-600'
+				>Show Technologies</summary
+			>
+			<ul class='flex flex-wrap gap-2'>
+				{
+					technologies.map((item) => (
+						<li
+							style={`border-color: #${item.color};`}
+							class={`w-max rounded-md border-2 border-dashed   ${
+								!item.exists && 'hidden'
+							} p-1 text-sm capitalize `}
+						>
+							{item.name}
+						</li>
+					))
+				}
+			</ul>
+		</details>
+	</div>
+	<div class='flex justify-between p-2'>
+		<div></div>
+		<a
+			href={link}
+			target='_blank'
+			class='border-neutral-500 text-sm font-bold text-neutral-700 hover:underline'
+		>
+			View Project
+		</a>
+	</div>
+</li>

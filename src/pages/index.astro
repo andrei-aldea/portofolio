@@ -2,15 +2,44 @@
 import Description from '../components/Description.astro'
 import Navigation from '../components/Navigation.astro'
 import Profile from '../components/Profile.astro'
+import Projects from '../components/Projects.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
 <Layout title='Andrei Aldea'>
-	<main class='flex'>
+	<main class='flex lg:border-r'>
 		<Navigation />
 		<section class='mx-4 h-[2000px] w-full sm:mx-8 md:ml-72'>
 			<Profile />
 			<Description />
+			<section id='projects' class='mt-4 p-2'>
+				<span class='font-bold'>Projects</span>
+				<ul class='mt-4 grid grid-cols-2 gap-8'>
+					<Projects
+						title='Hangman'
+						link='https://fn7x.github.io/hangman/'
+						react={true}
+					/>
+					<Projects
+						title='Cocktail'
+						link='https://cocktail-api-app.vercel.app'
+						react={true}
+						nextjs={true}
+					/>
+					<Projects
+						title='Blocuri Beton'
+						link='https://blocuribeton.com'
+						typescript={true}
+						astro={true}
+					/>
+					<Projects
+						title='Portofolio'
+						link='/'
+						typescript={true}
+						astro={true}
+					/>
+				</ul>
+			</section>
 		</section>
 	</main>
 </Layout>
