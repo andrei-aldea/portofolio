@@ -1,0 +1,20 @@
+---
+const navLinks = [
+	{ navName: 'about' },
+	{ navName: 'projects' },
+	{ navName: 'experience' }
+]
+---
+
+<nav class='fixed top-4 hidden w-56 flex-col sm:flex'>
+	{
+		navLinks.map((item) => (
+			<a
+				href={`#${item.navName}`}
+				class='mx-4 p-2 capitalize hover:rounded-md hover:bg-neutral-200'
+			>
+				{item.navName}
+			</a>
+		))
+	}
+</nav>
