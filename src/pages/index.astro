@@ -1,13 +1,16 @@
 ---
+import Experience from '../components/Experience.astro'
 import Navigation from '../components/Navigation.astro'
+import About from '../components/About.astro'
 import Layout from '../layouts/Layout.astro'
 ---
 
-<Layout title='Welcome to Astro.'>
+<Layout title='Andrei Aldea'>
 	<main class='flex'>
 		<Navigation />
-		<div class='ml-0 sm:ml-56'>
-			<section>Andrei Aldea</section>
-		</div>
+		<section class='mx-4 sm:mx-8 h-[2000px] w-full md:ml-72'>
+			<About />
+			<Experience />
+		</section>
 	</main>
 </Layout>

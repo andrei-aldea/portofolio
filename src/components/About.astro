@@ -1,0 +1,29 @@
+---
+import profile from '../images/profile.jpeg'
+---
+
+<section class='flex flex-col sm:flex-row sm:items-center sm:gap-4'>
+	<img
+		src={profile}
+		alt='Profile Photo'
+		class='h-32 w-32 -translate-y-8 rounded-full border-4 border-white object-cover drop-shadow-lg sm:h-36 sm:w-36 sm:-translate-y-12'
+	/>
+	<div class='h-32 -translate-y-4 sm:translate-y-0 w-full justify-between sm:flex md:block lg:flex'>
+		<div>
+			<div class='text-2xl font-bold'>Andrei Aldea</div>
+			<div class='text-neutral-700 sm:mr-10 md:-mr-2'>
+				I'm a Web Developer based in Bucharest.
+			</div>
+		</div>
+		<div class='mt-4 flex h-10 gap-4'>
+			<button
+				class='whitespace-nowrap rounded-md border-2 border-neutral-900 px-2 ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2'
+				>View CV</button
+			>
+			<button
+				class='rounded-md border-2 border-neutral-900 bg-neutral-900 px-2 text-white ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2'
+				>Contact</button
+			>
+		</div>
+	</div>
+</section>
