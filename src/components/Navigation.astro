@@ -9,25 +9,29 @@ const navProjects: Array<string> = [
 ]
 ---
 
-<nav class='fixed top-0 hidden h-screen w-64 flex-col border-r pt-4 md:flex'>
+<nav
+	class='fixed top-0 hidden h-screen w-64 flex-col border-r pt-4 dark:border-black md:flex'
+>
 	{
 		navLinks.map((item) => (
 			<a
 				href={`#${item}`}
-				class='group mx-4 flex justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200'
+				class='group mx-4 flex justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-700'
 			>
 				<span>{item}</span>
-				<span class='hidden text-blue-500 group-hover:block'>&rarr;</span>
+				<span class='hidden text-blue-500 group-hover:block dark:text-blue-400'>
+					&rarr;
+				</span>
 			</a>
 		))
 	}
 	<details class='group'>
 		<summary
-			class='group mx-4 flex list-none justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200'
+			class='group mx-4 flex cursor-pointer list-none justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200 dark:text-neutral-100 dark:hover:bg-neutral-700'
 		>
 			<span>Projects</span>
 			<span
-				class='hidden group-open:hidden group-hover:block group-open:group-hover:hidden'
+				class='hidden group-open:hidden group-hover:block group-open:group-hover:hidden dark:text-neutral-100'
 				>&darr;</span
 			>
 			<span class='hidden group-open:block'>&uarr;</span>
@@ -36,10 +40,10 @@ const navProjects: Array<string> = [
 			navProjects.map((item) => (
 				<a
 					href={`#${item}`}
-					class='group/small mx-4 ml-8 flex justify-between p-2 capitalize text-neutral-500 hover:rounded-md hover:bg-neutral-200'
+					class='group/small mx-4 ml-8 flex justify-between p-2 capitalize text-neutral-500 hover:rounded-md hover:bg-neutral-200 dark:text-neutral-400 dark:hover:bg-neutral-700'
 				>
 					<span>{item}</span>
-					<span class='hidden text-blue-500 group-hover/small:block'>
+					<span class='hidden text-blue-500 group-hover/small:block dark:text-blue-400'>
 						&rarr;
 					</span>
 				</a>

@@ -15,21 +15,25 @@ const Skills: Array<string> = [
 <section
 	class='grid gap-6 sm:grid-cols-2 md:mt-6 md:grid-cols-1 lg:mt-0 lg:grid-cols-2'
 >
-	<article id='about' class='bg-neutral-100 p-2'>
-		<span class='font-bold'>About me</span>
-		<p class='mb-2 text-sm text-neutral-600'>
+	<article id='about' class='bg-neutral-100 p-2 dark:bg-neutral-800'>
+		<span class='font-bold dark:text-neutral-100'>About me</span>
+		<p class='mb-2 text-sm text-neutral-600 dark:text-neutral-500'>
 			I am a up-and-coming web developer with a passion for creating visually
 			stunning and user-friendly websites.
 		</p>
-		<div class='font-bold'>Location</div>
-		<span class='text-sm text-neutral-600'>🇷🇴 Bucharest, Romania</span>
+		<div class='font-bold dark:text-neutral-100'>Location</div>
+		<span class='text-sm text-neutral-600 dark:text-neutral-500'
+			>🇷🇴 Bucharest, Romania</span
+		>
 	</article>
-	<aside class='bg-neutral-100 p-2'>
-		<span class='font-bold'>Skills</span>
+	<aside class='bg-neutral-100 p-2 dark:bg-neutral-800'>
+		<span class='font-bold dark:text-neutral-100'>Skills</span>
 		<ul class='flex flex-wrap gap-1 p-1 pl-0'>
 			{
 				Skills.map((item) => (
-					<li class='w-max rounded-full border-2 py-1 px-2 text-sm'>{item}</li>
+					<li class='w-max rounded-full border-2 py-1 px-2 text-sm dark:border-neutral-700 dark:text-neutral-100'>
+						{item}
+					</li>
 				))
 			}
 		</ul>
@@ -38,35 +42,44 @@ const Skills: Array<string> = [
 		id='experience'
 		class='space-y-4 p-2 sm:col-span-2 md:col-span-1 lg:col-span-2'
 	>
-		<span class='font-bold'>Experience</span>
+		<span class='font-bold dark:text-neutral-100'>Experience</span>
 		<ul class='flex flex-col gap-4'>
 			<li class='flex gap-4'>
 				<img src={NextLabIcon} alt='NextLab Icon' width='50' class='h-full' />
 				<div>
-					<div class='text-lg'>Python Trainee</div>
-					<div class='text-neutral-700'>
+					<div class='text-lg dark:text-neutral-100'>Python Trainee</div>
+					<div class='text-neutral-700 dark:text-neutral-400'>
 						<a
 							href='https://nextlab.tech/'
 							target='_blank'
 							class='hover:underline'>NextLab</a
 						> &#183; Part-time
 					</div>
-					<div class='text-sm text-neutral-500'>Oct 2022 - Present</div>
+					<div class='text-sm text-neutral-500 dark:text-neutral-600'>
+						Oct 2022 - Present
+					</div>
 				</div>
 			</li>
-			<hr />
+			<hr class='dark:border-black' />
 			<li class='flex gap-4'>
-				<img src={RezidentIcon} alt='Rezident Icon' width='50' class='h-full' />
+				<img
+					src={RezidentIcon}
+					alt='Rezident Icon'
+					width='50'
+					class='h-full dark:invert'
+				/>
 				<div>
-					<div class='text-lg'>Internship</div>
-					<div class='text-neutral-700'>
+					<div class='text-lg dark:text-neutral-100'>Internship</div>
+					<div class='text-neutral-700 dark:text-neutral-100'>
 						<a
 							href='https://rezident.ro/'
 							target='_blank'
 							class='hover:underline'>Rezident</a
 						> &#183; Part-time
 					</div>
-					<div class='text-sm text-neutral-500'>Jul 2022 - Jul 2022</div>
+					<div class='text-sm text-neutral-500 dark:text-neutral-600'>
+						Jul 2022 - Jul 2022
+					</div>
 				</div>
 			</li>
 		</ul>

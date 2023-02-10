@@ -6,24 +6,24 @@ import profile from '../images/profile.jpeg'
 	<img
 		src={profile}
 		alt='Profile Photo'
-		class='h-32 w-32 -translate-y-8 rounded-full border-4 border-white object-cover drop-shadow-lg sm:h-36 sm:w-36 sm:-translate-y-12'
+		class='h-32 w-32 -translate-y-8 rounded-full border-4 border-white object-cover drop-shadow-lg dark:border-black sm:h-36 sm:w-36 sm:-translate-y-12'
 	/>
 	<div
 		class='h-32 w-full -translate-y-4 justify-between sm:flex sm:translate-y-0 md:block lg:flex'
 	>
 		<div>
-			<div class='text-2xl font-bold'>Andrei Aldea</div>
-			<div class='text-neutral-700 sm:mr-10 md:mr-0'>
+			<div class='text-2xl font-bold dark:text-neutral-100'>Andrei Aldea</div>
+			<div class='text-neutral-700 dark:text-neutral-500 sm:mr-10 md:mr-0'>
 				I'm a Web Developer and Designer.
 			</div>
 		</div>
 		<div class='mt-4 flex h-10 gap-4'>
 			<button
-				class='whitespace-nowrap rounded-md border-2 border-neutral-900 px-2 ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2'
+				class='whitespace-nowrap rounded-md border-2 border-neutral-900 px-2 outline-neutral-900 ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2 dark:border-neutral-100 dark:bg-neutral-900 dark:text-neutral-100 dark:outline'
 				>View CV</button
 			>
 			<button
-				class='rounded-md border-2 border-neutral-900 bg-neutral-900 px-2 text-white ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2'
+				class='rounded-md border-2 border-neutral-900 bg-neutral-900 px-2 text-white outline-neutral-900 ring-blue-500 transition-all hover:ring-2 hover:ring-offset-2 dark:border-neutral-100 dark:bg-neutral-100 dark:text-black dark:hover:outline'
 				>Contact</button
 			>
 		</div>

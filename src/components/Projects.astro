@@ -25,59 +25,61 @@ const {
 const technologies: Array<Technologies> = [
 	{
 		name: 'html',
-		style: 'hover:border-orange-600',
+		style: 'hover:border-orange-600 dark:hover:border-orange-600',
 		exists: true
 	},
 	{
 		name: 'css',
-		style: 'hover:border-blue-700',
+		style: 'hover:border-blue-700 dark:hover:border-blue-700',
 		exists: true
 	},
 	{
 		name: 'javascript',
-		style: 'hover:border-yellow-300',
+		style: 'hover:border-yellow-300 dark:hover:border-yellow-300',
 		exists: true
 	},
 	{
 		name: 'tailwindcss',
-		style: 'hover:border-sky-400',
+		style: 'hover:border-sky-400 dark:hover:border-sky-400',
 		exists: true
 	},
 	{
 		name: 'typescript',
-		style: 'hover:border-sky-600',
+		style: 'hover:border-sky-600 dark:hover:border-sky-600',
 		exists: typescript
 	},
 	{
 		name: 'react',
-		style: 'hover:border-cyan-300',
+		style: 'hover:border-cyan-300 dark:hover:border-cyan-300',
 		exists: react
 	},
 	{
 		name: 'nextjs',
-		style: 'hover:border-black',
+		style:
+			'hover:border-black dark:hover:border-black hover:bg-black hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900 dark:hover:border-white',
 		exists: nextjs
 	},
 	{
 		name: 'astro',
-		style: 'hover:border-orange-600',
+		style: 'hover:border-orange-600 dark:hover:border-orange-600',
 		exists: astro
 	}
 ]
 ---
 
-<li class='h-max rounded-md border' id={title}>
-	<div class='border-b p-2'>
-		<span class='capitalize'>{title}</span>
+<li class='h-max rounded-md border dark:border-black' id={title}>
+	<div class='space-y-2 border-b p-2 dark:border-black'>
+		<span class='capitalize dark:text-neutral-100'>{title}</span>
 		<details>
-			<summary class='cursor-pointer text-sm text-neutral-600'
+			<summary
+				class='cursor-pointer text-sm text-neutral-600 dark:text-neutral-400'
 				>Show Technologies</summary
 			>
-			<ul class='flex flex-wrap gap-2'>
+			<ul class='mt-2 flex flex-wrap gap-2'>
 				{
 					technologies.map((item) => (
 						<li
-							class={`w-max rounded-md border-2 border-black ${
+							class={` w-max rounded-md border-2 border-black dark:border-neutral-100 dark:text-neutral-100 ${
 								item.style
 							} p-1 text-sm capitalize transition-all ${
 								!item.exists && 'hidden'
@@ -95,7 +97,7 @@ const technologies: Array<Technologies> = [
 		<a
 			href={link}
 			target='_blank'
-			class='border-neutral-500 text-sm font-bold text-neutral-700 hover:underline'
+			class='border-neutral-500 p-1 text-sm font-bold text-neutral-700 hover:underline dark:text-neutral-300'
 		>
 			View Project
 		</a>

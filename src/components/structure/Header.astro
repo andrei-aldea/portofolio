@@ -1,7 +1,12 @@
 ---
 import Background from '../Background.astro'
+import ThemeButton from '../ThemeButton.astro'
 ---
 
-<header class='ml-0 md:ml-64 lg:border-r' id='profile'>
+<header
+	class='relative ml-0 border-b dark:border-black md:ml-64 lg:border-r'
+	id='profile'
+>
+	<ThemeButton />
 	<Background />
 </header>
