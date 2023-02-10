@@ -2,6 +2,7 @@
 export interface Props {
 	title: string
 	link: string
+	description: string
 	typescript?: boolean
 	react?: boolean
 	nextjs?: boolean
@@ -16,6 +17,7 @@ export interface Technologies {
 const {
 	title,
 	link,
+	description,
 	typescript = false,
 	react = false,
 	nextjs = false,
@@ -24,43 +26,48 @@ const {
 
 const technologies: Array<Technologies> = [
 	{
-		name: 'html',
+		name: 'HTML',
 		style: 'hover:border-orange-600 dark:hover:border-orange-600',
 		exists: true
 	},
 	{
-		name: 'css',
+		name: 'CSS',
 		style: 'hover:border-blue-700 dark:hover:border-blue-700',
 		exists: true
 	},
 	{
-		name: 'javascript',
+		name: 'Git',
+		style: 'hover:border-orange-600 dark:hover:border-orange-600',
+		exists: true
+	},
+	{
+		name: 'JavaScript',
 		style: 'hover:border-yellow-300 dark:hover:border-yellow-300',
 		exists: true
 	},
 	{
-		name: 'tailwindcss',
+		name: 'Tailwind CSS',
 		style: 'hover:border-sky-400 dark:hover:border-sky-400',
 		exists: true
 	},
 	{
-		name: 'typescript',
+		name: 'TypeScript',
 		style: 'hover:border-sky-600 dark:hover:border-sky-600',
 		exists: typescript
 	},
 	{
-		name: 'react',
+		name: 'React',
 		style: 'hover:border-cyan-300 dark:hover:border-cyan-300',
 		exists: react
 	},
 	{
-		name: 'nextjs',
+		name: 'Next.js',
 		style:
 			'hover:border-black dark:hover:border-black hover:bg-black hover:text-neutral-100 dark:hover:bg-neutral-100 dark:hover:text-neutral-900 dark:hover:border-white',
 		exists: nextjs
 	},
 	{
-		name: 'astro',
+		name: 'Astro',
 		style: 'hover:border-orange-600 dark:hover:border-orange-600',
 		exists: astro
 	}
@@ -69,21 +76,81 @@ const technologies: Array<Technologies> = [
 
 <li class='h-max rounded-md border dark:border-black' id={title}>
 	<div class='space-y-2 border-b p-2 dark:border-black'>
-		<span class='capitalize dark:text-neutral-100'>{title}</span>
 		<details>
-			<summary
-				class='cursor-pointer text-sm text-neutral-600 dark:text-neutral-400'
-				>Show Technologies</summary
-			>
+			<summary class='flex cursor-pointer items-center gap-2'>
+				<span class='capitalize dark:text-neutral-100'>{title}</span>
+				<svg
+					class='dark:hidden'
+					xmlns='http://www.w3.org/2000/svg'
+					xmlns:xlink='http://www.w3.org/1999/xlink'
+					fill='#000'
+					version='1.1'
+					id='Capa_1'
+					width='12px'
+					height='12px'
+					viewBox='0 0 342.382 342.382'
+					xml:space='preserve'
+				>
+					<g>
+						<g>
+							<g>
+								<path
+									d='M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219     c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z'
+								></path>
+							</g>
+							<g>
+								<path
+									d='M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219     c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z'
+								></path>
+							</g>
+							<g>
+								<path
+									d='M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219     c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z'
+								></path>
+							</g>
+						</g>
+					</g>
+				</svg>
+				<svg
+					class='hidden dark:block'
+					xmlns='http://www.w3.org/2000/svg'
+					xmlns:xlink='http://www.w3.org/1999/xlink'
+					fill='#fff'
+					version='1.1'
+					id='Capa_1'
+					width='12px'
+					height='12px'
+					viewBox='0 0 342.382 342.382'
+					xml:space='preserve'
+				>
+					<g>
+						<g>
+							<g>
+								<path
+									d='M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219     c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z'
+								></path>
+							</g>
+							<g>
+								<path
+									d='M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219     c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z'
+								></path>
+							</g>
+							<g>
+								<path
+									d='M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219     c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z'
+								></path>
+							</g>
+						</g>
+					</g>
+				</svg>
+			</summary>
 			<ul class='mt-2 flex flex-wrap gap-2'>
 				{
 					technologies.map((item) => (
 						<li
 							class={` w-max rounded-md border-2 border-black dark:border-neutral-100 dark:text-neutral-100 ${
 								item.style
-							} p-1 text-sm capitalize transition-all ${
-								!item.exists && 'hidden'
-							}`}
+							} p-1 text-sm transition-all ${!item.exists && 'hidden'}`}
 						>
 							{item.name}
 						</li>
@@ -91,6 +158,7 @@ const technologies: Array<Technologies> = [
 				}
 			</ul>
 		</details>
+		<p class='text-sm text-neutral-600 dark:text-neutral-400'>{description}</p>
 	</div>
 	<div class='flex justify-between p-2'>
 		<div></div>
@@ -103,3 +171,8 @@ const technologies: Array<Technologies> = [
 		</a>
 	</div>
 </li>
+<style>
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+</style>
