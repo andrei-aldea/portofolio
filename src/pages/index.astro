@@ -9,31 +9,33 @@ import Layout from '../layouts/Layout.astro'
 <Layout title='Andrei Aldea'>
 	<main class='flex lg:border-r'>
 		<Navigation />
-		<section class='mx-4 h-[2000px] w-full sm:mx-8 md:ml-72'>
+		<section class='mx-4 w-full sm:mx-8 md:ml-72'>
 			<Profile />
 			<Description />
 			<section id='projects' class='mt-4 p-2'>
 				<span class='font-bold'>Projects</span>
-				<ul class='mt-4 grid grid-cols-2 gap-8'>
+				<ul
+					class='mt-4 grid gap-8 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2'
+				>
 					<Projects
-						title='Hangman'
+						title='hangman'
 						link='https://fn7x.github.io/hangman/'
 						react={true}
 					/>
 					<Projects
-						title='Cocktail'
+						title='cocktail'
 						link='https://cocktail-api-app.vercel.app'
 						react={true}
 						nextjs={true}
 					/>
 					<Projects
-						title='Blocuri Beton'
+						title='blocuri beton'
 						link='https://blocuribeton.com'
 						typescript={true}
 						astro={true}
 					/>
 					<Projects
-						title='Portofolio'
+						title='portofolio'
 						link='/'
 						typescript={true}
 						astro={true}

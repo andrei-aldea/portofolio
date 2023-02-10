@@ -10,10 +10,9 @@ export interface Props {
 
 export interface Technologies {
 	name: string
-	color: string
+	style: string
 	exists: boolean
 }
-
 const {
 	title,
 	link,
@@ -26,50 +25,50 @@ const {
 const technologies: Array<Technologies> = [
 	{
 		name: 'html',
-		color: 'e34c26',
+		style: 'hover:border-orange-600',
 		exists: true
 	},
 	{
 		name: 'css',
-		color: '264de4',
+		style: 'hover:border-blue-700',
 		exists: true
 	},
 	{
 		name: 'javascript',
-		color: 'fcdc00',
+		style: 'hover:border-yellow-300',
 		exists: true
 	},
 	{
 		name: 'tailwindcss',
-		color: '38bdf8',
+		style: 'hover:border-sky-400',
 		exists: true
 	},
 	{
 		name: 'typescript',
-		color: '3178c6',
+		style: 'hover:border-sky-600',
 		exists: typescript
 	},
 	{
 		name: 'react',
-		color: '61dafb',
+		style: 'hover:border-cyan-300',
 		exists: react
 	},
 	{
 		name: 'nextjs',
-		color: 'fff',
+		style: 'hover:border-black',
 		exists: nextjs
 	},
 	{
 		name: 'astro',
-		color: 'ff5d01',
+		style: 'hover:border-orange-600',
 		exists: astro
 	}
 ]
 ---
 
-<li class='rounded-md border'>
+<li class='h-max rounded-md border' id={title}>
 	<div class='border-b p-2'>
-		<span>{title}</span>
+		<span class='capitalize'>{title}</span>
 		<details>
 			<summary class='cursor-pointer text-sm text-neutral-600'
 				>Show Technologies</summary
@@ -78,10 +77,11 @@ const technologies: Array<Technologies> = [
 				{
 					technologies.map((item) => (
 						<li
-							style={`border-color: #${item.color};`}
-							class={`w-max rounded-md border-2 border-dashed   ${
+							class={`w-max rounded-md border-2 border-black ${
+								item.style
+							} p-1 text-sm capitalize transition-all ${
 								!item.exists && 'hidden'
-							} p-1 text-sm capitalize `}
+							}`}
 						>
 							{item.name}
 						</li>

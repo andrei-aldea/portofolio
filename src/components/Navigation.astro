@@ -1,5 +1,12 @@
 ---
-const navLinks: Array<string> = ['profile', 'about', 'experience', 'projects']
+const navLinks: Array<string> = ['profile', 'about', 'experience']
+
+const navProjects: Array<string> = [
+	'hangman',
+	'cocktail',
+	'blocuri beton',
+	'portofolio'
+]
 ---
 
 <nav class='fixed top-0 hidden h-screen w-64 flex-col border-r pt-4 md:flex'>
@@ -14,4 +21,34 @@ const navLinks: Array<string> = ['profile', 'about', 'experience', 'projects']
 			</a>
 		))
 	}
+	<details class='group'>
+		<summary
+			class='group mx-4 flex list-none justify-between p-2 capitalize hover:rounded-md hover:bg-neutral-200'
+		>
+			<span>Projects</span>
+			<span
+				class='hidden group-open:hidden group-hover:block group-open:group-hover:hidden'
+				>&darr;</span
+			>
+			<span class='hidden group-open:block'>&uarr;</span>
+		</summary>
+		{
+			navProjects.map((item) => (
+				<a
+					href={`#${item}`}
+					class='group/small mx-4 ml-8 flex justify-between p-2 capitalize text-neutral-500 hover:rounded-md hover:bg-neutral-200'
+				>
+					<span>{item}</span>
+					<span class='hidden text-blue-500 group-hover/small:block'>
+						&rarr;
+					</span>
+				</a>
+			))
+		}
+	</details>
 </nav>
+<style>
+	details > summary::-webkit-details-marker {
+		display: none;
+	}
+</style>
