@@ -1,6 +1,8 @@
 ---
-import Description from '../components/Description.astro'
+import About from '../components/About.astro'
+import Experience from '../components/Experience.astro'
 import Navigation from '../components/Navigation.astro'
+import Other from '../components/Other.astro'
 import Profile from '../components/Profile.astro'
 import Projects from '../components/Projects.astro'
 import Layout from '../layouts/Layout.astro'
@@ -9,9 +11,11 @@ import Layout from '../layouts/Layout.astro'
 <Layout title='Andrei Aldea'>
 	<main class='flex dark:border-black lg:border-r'>
 		<Navigation />
-		<section class='mx-4 w-full sm:mx-8 md:ml-72'>
+		<section class='mx-4 w-full space-y-3 sm:mx-8 md:ml-72'>
 			<Profile />
-			<Description />
+			<About />
+			<Experience />
+			<Other />
 			<section id='projects' class='mt-4 p-2'>
 				<span class='font-bold dark:text-neutral-100'>Projects</span>
 				<ul
