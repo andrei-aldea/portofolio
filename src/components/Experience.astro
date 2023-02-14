@@ -2,6 +2,57 @@
 import HtmlCodingIcon from '../images/html-coding.png'
 import NextLabIcon from '../images/nextlab.png'
 import RezidentIcon from '../images/rezdent.png'
+
+export interface Job {
+	icon: any
+	iconStyleInvert: boolean
+	name: string
+	jobExists: boolean
+	employer: string
+	link: string
+	type: string
+	period: string
+	description: string
+}
+
+const jobs: Array<Job> = [
+	{
+		icon: HtmlCodingIcon,
+		iconStyleInvert: true,
+		name: 'Freelance Web Developer',
+		jobExists: false,
+		employer: '',
+		link: '',
+		type: '',
+		period: 'Jan 2023 - Present',
+		description:
+			"I have worked on a variety of projects, from personal projects to local business' websites and have a keen eye for detail and a commitment to producing pixel-perfect results. I am a fast learner, a great problem solver, and I take pride in my ability to create dynamic and engaging websites that meet the needs of both users and clients."
+	},
+	{
+		icon: NextLabIcon,
+		iconStyleInvert: false,
+		name: 'Python Trainer',
+		jobExists: true,
+		employer: 'NextLab',
+		link: 'https://nextlab.tech/',
+		type: 'Part-time ',
+		period: 'Oct 2022 - Present',
+		description:
+			'Coding Python scripts for a platform aimed at kids requires simplicity, hands-on approach, visualization, instant feedback, and project-based learning to make the experience fun, interactive and memorable. By providing a visual and interactive learning environment, I helped children develop problem-solving and critical thinking skills, understand complex concepts and apply them in real-world situations.'
+	},
+	{
+		icon: RezidentIcon,
+		iconStyleInvert: true,
+		name: 'Internship',
+		jobExists: true,
+		employer: 'Rezident',
+		link: 'https://rezident.ro/',
+		type: 'Part-time ',
+		period: 'Jul 2022 - Jul 2022',
+		description:
+			'Gained valuable knowledge and hands-on experience in various aspects of the business, including website development, financial reporting, and working with popular vacation rental platforms such as Airbnb and Booking. I also learn how to manage listings, communicate with guests, and handle reservations, which are all important skills in the short-term rental industry.'
+	}
+]
 ---
 
 <section
@@ -13,62 +64,104 @@ import RezidentIcon from '../images/rezdent.png'
 	>
 		<span class='font-bold dark:text-neutral-100'>Experience</span>
 		<ul class='flex flex-col gap-4'>
-			<li class='flex gap-4'>
-				<img
-					src={HtmlCodingIcon}
-					alt='NextLab Icon'
-					width='50'
-					class='h-full dark:invert'
-				/>
-				<div>
-					<div class='text-lg dark:text-neutral-100'>
-						Freelance Web Developer
-					</div>
-
-					<div class='text-sm text-neutral-500 dark:text-neutral-600'>
-						Jan 2023 - Present
-					</div>
-				</div>
-			</li>
-			<hr class='dark:border-black' />
-			<li class='flex gap-4'>
-				<img src={NextLabIcon} alt='NextLab Icon' width='50' class='h-full' />
-				<div>
-					<div class='text-lg dark:text-neutral-100'>Python Trainer</div>
-					<div class='text-neutral-700 dark:text-neutral-400'>
-						<a
-							href='https://nextlab.tech/'
-							target='_blank'
-							class='hover:underline'>NextLab</a
-						> &#183; Part-time
-					</div>
-					<div class='text-sm text-neutral-500 dark:text-neutral-600'>
-						Oct 2022 - Present
-					</div>
-				</div>
-			</li>
-			<hr class='dark:border-black' />
-			<li class='flex gap-4'>
-				<img
-					src={RezidentIcon}
-					alt='Rezident Icon'
-					width='50'
-					class='h-full dark:invert'
-				/>
-				<div>
-					<div class='text-lg dark:text-neutral-100'>Internship</div>
-					<div class='text-neutral-700 dark:text-neutral-100'>
-						<a
-							href='https://rezident.ro/'
-							target='_blank'
-							class='hover:underline'>Rezident</a
-						> &#183; Part-time
-					</div>
-					<div class='text-sm text-neutral-500 dark:text-neutral-600'>
-						Jul 2022 - Jul 2022
-					</div>
-				</div>
-			</li>
+			{
+				jobs.map((item) => (
+					<>
+						{item.jobExists && <hr class='dark:border-black' />}
+						<li class='flex gap-4'>
+							<img
+								src={item.icon}
+								alt='Employer Icon'
+								width='50'
+								class={`h-full ${item.iconStyleInvert && 'dark:invert'}`}
+							/>
+							<div>
+								<details>
+									<summary class='flex w-max cursor-pointer flex-col'>
+										<div class='flex items-center gap-2'>
+											<span class='text-lg dark:text-neutral-100'>
+												{item.name}
+											</span>
+											<svg
+												class='dark:hidden'
+												xmlns='http://www.w3.org/2000/svg'
+												xmlns:xlink='http://www.w3.org/1999/xlink'
+												fill='#000'
+												version='1.1'
+												id='Capa_1'
+												width='12px'
+												height='12px'
+												viewBox='0 0 342.382 342.382'
+												xml:space='preserve'
+											>
+												<g>
+													<g>
+														<g>
+															<path d='M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219     c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z' />
+														</g>
+														<g>
+															<path d='M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219     c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z' />
+														</g>
+														<g>
+															<path d='M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219     c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z' />
+														</g>
+													</g>
+												</g>
+											</svg>
+											<svg
+												class='hidden dark:block'
+												xmlns='http://www.w3.org/2000/svg'
+												xmlns:xlink='http://www.w3.org/1999/xlink'
+												fill='#fff'
+												version='1.1'
+												id='Capa_1'
+												width='12px'
+												height='12px'
+												viewBox='0 0 342.382 342.382'
+												xml:space='preserve'
+											>
+												<g>
+													<g>
+														<g>
+															<path d='M45.225,125.972C20.284,125.972,0,146.256,0,171.191c0,24.94,20.284,45.219,45.225,45.219     c24.926,0,45.219-20.278,45.219-45.219C90.444,146.256,70.151,125.972,45.225,125.972z' />
+														</g>
+														<g>
+															<path d='M173.409,125.972c-24.938,0-45.225,20.284-45.225,45.219c0,24.94,20.287,45.219,45.225,45.219     c24.936,0,45.226-20.278,45.226-45.219C218.635,146.256,198.345,125.972,173.409,125.972z' />
+														</g>
+														<g>
+															<path d='M297.165,125.972c-24.932,0-45.222,20.284-45.222,45.219c0,24.94,20.29,45.219,45.222,45.219     c24.926,0,45.217-20.278,45.217-45.219C342.382,146.256,322.091,125.972,297.165,125.972z' />
+														</g>
+													</g>
+												</g>
+											</svg>
+										</div>
+										<div>
+											{item.jobExists && (
+												<div class='text-neutral-700 dark:text-neutral-400'>
+													<a
+														href={item.link}
+														target='_blank'
+														class='hover:underline'
+													>
+														{item.employer}
+													</a>
+													&#183; {item.type}
+												</div>
+											)}
+											<div class='text-sm text-neutral-500 dark:text-neutral-600'>
+												{item.period}
+											</div>
+										</div>
+									</summary>
+									<p class='text-sm text-neutral-600 dark:text-neutral-400'>
+										{item.description}
+									</p>
+								</details>
+							</div>
+						</li>
+					</>
+				))
+			}
 		</ul>
 	</article>
 </section>
