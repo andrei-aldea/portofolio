@@ -57,11 +57,9 @@ const jobs: Array<Job> = [
 
 <section
 	class='grid gap-6 sm:grid-cols-2 md:mt-6 md:grid-cols-1 lg:mt-0 lg:grid-cols-2'
+	id='experience'
 >
-	<article
-		id='experience'
-		class='space-y-4 p-2 sm:col-span-2 md:col-span-1 lg:col-span-2'
-	>
+	<article class='space-y-4 p-2 sm:col-span-2 md:col-span-1 lg:col-span-2'>
 		<span class='font-bold dark:text-neutral-100'>Experience</span>
 		<ul class='flex flex-col gap-4'>
 			{
@@ -143,7 +141,7 @@ const jobs: Array<Job> = [
 														target='_blank'
 														class='hover:underline'
 													>
-														{item.employer}
+														<span>{item.employer}</span>
 													</a>
 													&#183; {item.type}
 												</div>
