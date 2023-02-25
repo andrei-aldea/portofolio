@@ -6,7 +6,9 @@ export interface Props {
 	typescript?: boolean
 	react?: boolean
 	nextjs?: boolean
+	remix?: boolean
 	astro?: boolean
+	mongodb?: boolean
 }
 
 export interface Technologies {
@@ -21,7 +23,9 @@ const {
 	typescript = false,
 	react = false,
 	nextjs = false,
-	astro = false
+	remix = false,
+	astro = false,
+	mongodb = false
 } = Astro.props
 
 const technologies: Array<Technologies> = [
@@ -67,9 +71,19 @@ const technologies: Array<Technologies> = [
 		exists: nextjs
 	},
 	{
+		name: 'Remix',
+		style: 'hover:border-sky-200 dark:hover:border-sky-200',
+		exists: remix
+	},
+	{
 		name: 'Astro',
 		style: 'hover:border-orange-600 dark:hover:border-orange-600',
 		exists: astro
+	},
+	{
+		name: 'MongoDB',
+		style: 'hover:border-emerald-700 dark:hover:border-emerald-700',
+		exists: mongodb
 	}
 ]
 ---
